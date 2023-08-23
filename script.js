@@ -1,9 +1,13 @@
-// wait for all resouces to load before executing the JS, avoiding race conditions
+// wait for all resouces to load before executing the JS
 window.onload = function () {
+    // grab the canvas element
     const canvas = document.getElementById("canvas1")
+    // establish a canvas context using the 2d canvas API
     const ctx = canvas.getContext("2d")
+    // set width to window width, and height to window height
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
+
     const flowField = new FlowFieldEffect(ctx, canvas.width, canvas.height)
 }
 
